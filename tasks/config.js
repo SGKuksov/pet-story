@@ -1,7 +1,7 @@
 const notify = require('gulp-notify');
 const { resolve } = require('path');
 
-const build = resolve(__dirname, '../build');
+const build = resolve(__dirname, '../docs');
 
 module.exports = {
   output: build,
@@ -14,13 +14,13 @@ module.exports = {
     },
   },
   server: {
-    watch: `build`,
+    watch: `docs`,
   },
   scripts: {
     input: resolve(__dirname, '../src/assets/scripts/main.ts'),
     // jquery: resolve(__dirname, '../src/assets/scripts/jquery-scripts.js'),
     watch: [`src/assets/**/*.{js,ts}`, `src/blocks/**/*.{js,ts}`, `src/components/**/*.{js,ts}`],
-    output: resolve(__dirname, '../build/scripts'),
+    output: resolve(__dirname, '../docs/scripts'),
     todo: {
       input: [`src/assets/**/*.{js,ts}`, `src/blocks/**/*.{js,ts}`, `src/components/**/*.{js,ts}`],
       output: `todos`,
@@ -31,7 +31,7 @@ module.exports = {
     input: `src/assets/styles/app.scss`,
     watch: [`src/assets/styles/**/*.scss`, `src/blocks/**/*.scss`, `src/components/**/*.scss`],
     output: {
-      path: `build/css`,
+      path: `docs/css`,
       name: `style.css`,
     },
     todo: {
@@ -49,7 +49,7 @@ module.exports = {
       `src/components/**/*.twig`,
     ],
     temp: `temp`,
-    output: `build/`,
+    output: `docs/`,
     todo: {
       input: [
         `src/assets/layout/*.twig`,
@@ -63,33 +63,33 @@ module.exports = {
   },
   fonts: {
     input: `src/assets/fonts/**/*.{ttf,eot,svg,woff,woff2}`,
-    output: `build/fonts/`,
+    output: `docs/fonts/`,
   },
   favicons: {
     input: `src/favicons/*.{ico,png,svg}`,
-    output: `build/favicons/`,
+    output: `docs/favicons/`,
   },
   img: {
     input: `src/img/**/*.{jpg,png,jpeg,webp,svg}`,
-    output: `build/img/`,
+    output: `docs/img/`,
   },
   video: {
     input: `src/video/**/*.{mp4,avi,mov}`,
-    output: `build/video/`,
+    output: `docs/video/`,
   },
   svg: {
     input: `src/components/**/*.svg`,
-    output: `build/icons/`,
+    output: `docs/icons/`,
   },
   svgsprite: {
     input: `src/img/sprite/svg/*.svg`,
-    output: `build/img/sprite/`,
-    viewhtml: `build/`,
+    output: `docs/img/sprite/`,
+    viewhtml: `docs/`,
     watch: [`src/img/sprite/svg/*.svg`],
   },
   static: {
     input: `src/static/**/*.*`,
-    output: `build/`,
+    output: `docs/`,
   },
   NODE_ENV: process.env.NODE_ENV || 'development', // or production
   isProduction: this.NODE_ENV === 'production',
