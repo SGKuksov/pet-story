@@ -5,6 +5,8 @@
 - WEBPACK
 - GULP
 
+## [Ссылка на деплой](https://sgkuksov.github.io/pet-story/)
+
 ## Установка
 ```
 npm i --legacy-peer-deps
