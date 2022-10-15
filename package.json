@@ -51,7 +51,7 @@
     "gulp-twig": "^1.2.0",
     "gulp-w3c-html-validator": "^5.1.0",
     "gulp-webp": "^4.0.1",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.3",
     "postcss-fixes": "^3.0.0",
     "postcss-object-fit-images": "^1.1.2",
     "postcss-preset-env": "^6.7.0",
