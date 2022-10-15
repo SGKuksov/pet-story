@@ -1,0 +1,16 @@
+{% macro radio(params) %}
+    <label class="radio {{ params.class }}">
+        <input
+            type="radio"
+            class="radio__input"
+            name="{{ params.name }}"
+            {% if params.checked %}checked{% endif %}
+            {% if params.required %}required{% endif %}
+        >
+        <span class="radio__custom-input"></span>
+
+        <span class="radio__text">
+            {{ params.text | default('Нажимая чекбокс вы подтверждаете что-то важное') }}
+        </span>
+    </label>
+{% endmacro %}

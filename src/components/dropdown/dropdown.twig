@@ -1,0 +1,11 @@
+{% macro dropdown(params) %}
+	<div class="dropdown {{ params.type == 'right' ? 'dropdown_right' : 'dropdown_left' }}" data-dropdown="{{ params.id }}">
+        {{ params.trigger }}
+
+        <div class="dropdown__content">
+            {{ params.content }}
+
+            <button data-dropdown-close>Х</button>
+        </div>
+    </div>
+{% endmacro %}

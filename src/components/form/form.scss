@@ -1,0 +1,16 @@
+.form {
+
+}
+
+.form__row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form__item {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

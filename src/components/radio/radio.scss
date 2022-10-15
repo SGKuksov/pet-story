@@ -1,0 +1,57 @@
+.radio {
+  display: flex;
+  cursor: pointer;
+}
+
+.radio__input {
+  @extend .visually-hidden;
+}
+
+.radio__custom-input {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+
+  &:before {
+    position: absolute;
+    content: '';
+    border: 2px solid $gray;
+    will-change: border-color;
+    @include transition();
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+  }
+
+  &:after {
+    position: absolute;
+    bottom: 2px;
+    left: 6px;
+    content: '';
+    display: block;
+    opacity: 0;
+    will-change: opacity;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: pink;
+    @include transition();
+  }
+}
+
+.radio__input:checked + .radio__custom-input {
+
+  &:before {
+    border-color: $black;
+  }
+
+  &:after {
+    opacity: 1;
+  }
+}
+
+.radio__text {
+  padding-left: 16px;
+  font-size: 16px;
+}

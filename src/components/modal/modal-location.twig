@@ -1,0 +1,25 @@
+{% set locationContent %}
+    {% set locationList = [
+        'С-Петербург и Ленобласть',
+        'Череповец',
+        'Вологодская обл.',
+        'Карелия',
+        'Новгородская обл.',
+        'Псковская обл.',
+    ] %}
+
+    <div class="modal-location">
+        {% for item in locationList %}
+            <a href="#" class="modal-location__item">{{ item }}</a>
+        {% endfor %}
+
+        <button data-modal-close>Закрыть</button>
+        <button>Отправить</button>
+    </div>
+{% endset %}
+
+{% include 'modal.twig' with {
+    modalId: 'location',
+    modalTitle: 'Выберите регион',
+    modalContent: locationContent,
+} %}

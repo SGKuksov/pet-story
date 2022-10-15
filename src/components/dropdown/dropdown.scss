@@ -1,0 +1,36 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdown__content {
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+  padding: 20px;
+  display: none;
+  opacity: 0;
+  will-change: opacity;
+  background: $white;
+  box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+  @include transition((opacity, box-shadow));
+}
+
+.dropdown_open {
+
+  .dropdown__content {
+    display: inline-flex;
+  }
+}
+
+.dropdown_visible {
+
+  .dropdown__content {
+    opacity: 1;
+  }
+}
+
+.dropdown_left {
+}
+
+.dropdown_right {
+}

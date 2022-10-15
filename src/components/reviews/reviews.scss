@@ -1,0 +1,84 @@
+.reviews {
+
+}
+
+.reviews__card {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $gray;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 1.3em;
+  color: $black;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @media #{$tablet-landscape} {
+    flex-wrap: nowrap;
+    font-size: 1.6rem;
+  }
+}
+
+.reviews__info {
+  width: 100%;
+  margin-bottom: rhythm(2);
+
+  @media #{$tablet-landscape} {
+    margin-right: column(1, 32);
+    width: column(5, 32);
+    flex-basis: column(5, 32);
+    flex-shrink: 0;
+  }
+}
+
+.reviews__name {
+  display: block;
+  width: 100%;
+  margin-bottom: rhythm(1);
+  font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media #{$tablet-landscape} {
+    margin-bottom: rhythm(2);
+  }
+}
+
+.reviews__city {
+  margin-bottom: rhythm(1);
+
+  @media #{$tablet} {
+    margin-bottom: rhythm(2);
+  }
+}
+
+.reviews__date {
+  margin-bottom: rhythm(1);
+
+  @media #{$tablet-landscape} {
+    margin-bottom: rhythm(2);
+  }
+}
+
+.reviews__rating {
+
+}
+
+.reviews__text {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 1.3em;
+  color: $black;
+
+  @media #{$tablet-landscape} {
+    font-size: 1.6rem;
+    flex-grow: 1;
+  }
+}

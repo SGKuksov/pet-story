@@ -1,0 +1,97 @@
+{% macro form(params) %}
+    {# Проверка на пустоту #}
+    {# data-error-empty="<Сообщение об ошибке>" #}
+
+    {# Мин. кол символов #}
+    {# data-error-maxlen="<Сообщение об ошибке>" #}
+    {# data-error-minlen="<Сообщение об ошибке>" #}
+    {# minlength #}
+    {# maxlength #}
+
+    {# Проверка телефона #}
+    {# data-error-phone="<Сообщение об ошибке>" #}
+
+    {# Проверка почты #}
+    {# data-error-email="<Сообщение об ошибке>" #}
+
+    {# Проверка по регулярному выражению #}
+    {# data-error-reg="<Регулярное выражение>" #}
+    {# pattern="[0-9]{3}" #}
+
+    {% from '../checkbox/checkbox.twig' import checkbox %}
+    {% from '../radio/radio.twig' import radio %}
+
+    <form
+        action=""
+        class="form"
+        data-form="{{ params.id }}"
+        data-error-empty="Поле не должно быть пустым"
+        data-error-maxlen="Максимальная длина {x} символов"
+        data-error-minlen="Минимальная длина {x} символов"
+        data-error-phone="Неверный формат номера телефона"
+        data-error-email="Неверный формат e-mail"
+    >
+        <div class="form__row">
+            <label class="form__item">
+                <input type="text" required>
+            </label>
+
+            <label class="form__item">
+                <input type="tel" required>
+            </label>
+        </div>
+
+        <div class="form__row">
+            <label class="form__item">
+                <input type="number" required>
+            </label>
+        </div>
+
+        <div class="form__row">
+            <label class="form__item">
+                <input type="email" required>
+            </label>
+        </div>
+
+        <div class="form__row">
+            <label class="form__item">
+                <input type="file" required>
+            </label>
+        </div>
+
+        <div class="form__row">
+            <label class="form__item">
+                <select required>
+                    <option selected>Выберите вариант</option>
+                    <option value="1">Пункт 1</option>
+                    <option value="2">Пункт 2</option>
+                    <option value="3">Пункт 3</option>
+                    <option value="4">Пункт 4</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="form__row">
+            {{ radio({
+                class: 'form__item',
+                name: 'test',
+                text: 'Текст текст текст <a href="#fff">Ссылка на документ</a> текст текст'
+            }) }}
+            {{ radio({
+                class: 'form__item',
+                name: 'test',
+                text: 'Текст текст текст <a href="#fff">Ссылка на документ</a> текст текст'
+            }) }}
+        </div>
+
+        <div class="form__row">
+            {{ checkbox({
+                class: 'form__item',
+                required: true,
+                text: 'Текст текст текст <a href="#fff">Ссылка на документ</a> текст текст'
+            }) }}
+        </div>
+
+        <button type="submit">Отправить</button>
+    </form>
+{% endmacro %}

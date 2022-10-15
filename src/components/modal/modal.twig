@@ -1,0 +1,15 @@
+{% from "../icon/icon.twig" import icon as icon %}
+
+<div class="modal" data-modal="{{ modalId }}">
+    <div class="modal__content" data-modal-content>
+        <button class="modal__close" data-modal-close>{{ icon({name: 'burger-close-desktop', w: '16', h: '16'}) }}</button>
+
+        <div class="modal__content-header">
+            {{ modalTitle }}
+        </div>
+
+        <div class="modal__content-body">
+            {{ modalContent }}
+        </div>
+    </div>
+</div>

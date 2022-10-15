@@ -1,0 +1,44 @@
+{% from "../icon/icon.twig" import icon as icon %}
+{% set pagination = pagination | default ([{
+    modify: '',
+    startPage: 3,
+    finishPage: 8,
+    lastPage: 126,
+    arrowNav: true
+}]) %}
+
+<section class="pagination">
+    <ul class="pagination__list">
+        {% if arrowNav == true %}
+            <li class="pagination__item pagination__item_arrow-prev">
+                <a href="#">{{ icon({name: 'arrow'}) }}</a>
+            </li>
+        {% endif %}
+        {% if startPage != 1 %}
+            <li class="pagination__item">
+                <a href="#">1</a>
+            </li>
+            <li class="pagination__item pagination__item_separator">
+                <span>...</span>
+            </li>
+        {% endif %}
+        {% for i in startPage..finishPage %}
+            <li class="pagination__item{% if activePage == i %} is-active{% endif %}">
+                <a href="#">{{ i }}</a>
+            </li>
+        {% endfor %}
+        {% if finishPage != lastPage %}
+            <li class="pagination__item pagination__item_separator">
+                <span>...</span>
+            </li>
+            <li class="pagination__item">
+                <a href="#">{{ lastPage }}</a>
+            </li>
+        {% endif %}
+        {% if arrowNav == true %}
+            <li class="pagination__item pagination__item_arrow-next">
+                <a href="#">{{ icon({name: 'arrow'}) }}</a>
+            </li>
+        {% endif %}
+    </ul>
+</section>

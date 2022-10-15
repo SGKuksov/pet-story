@@ -1,0 +1,13 @@
+<section class="breadcrumbs{% if modify %} {{ modify }}{% endif %}">
+    <ul class="breadcrumbs__list">
+        {% for item in items %}
+            <li class="breadcrumbs__item">
+                {% if item.last %}
+                    <span class="breadcrumbs__last">{{ item.text }}</span>
+                {% else %}
+                    <a href="{{ item.link }}">{{ item.text }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</section>

@@ -1,0 +1,25 @@
+{% from "../icon/icon.twig" import icon as icon %}
+
+<div class="reviews">
+    {% for i in 0..7 %}
+        <blockquote class="reviews__card">
+            <div class="reviews__info">
+                <cite class="reviews__name">Константин Константинопольский</cite>
+                <div class="reviews__city">Черная Речка</div>
+                <time datetime="21.12.2020" class="reviews__date">21.12.2020</time>
+                <div class="reviews__rating">
+                    {{ icon({name: 'star', class: 'rating-counter__icon'}) }}
+                    {{ icon({name: 'star', class: 'rating-counter__icon'}) }}
+                    {{ icon({name: 'star', class: 'rating-counter__icon'}) }}
+                    {{ icon({name: 'star', class: 'rating-counter__icon'}) }}
+                    {{ icon({name: 'star', class: 'rating-counter__icon'}) }}
+                </div>
+            </div>
+
+            <div class="reviews__text">
+                Качественный материал по привлекательной цене. Цвет насыщенный с интересной текстурой. Монтаж
+                достаточно прост и быстр. Для дачного дома идеальное решение.
+            </div>
+        </blockquote>
+    {% endfor %}
+</div>

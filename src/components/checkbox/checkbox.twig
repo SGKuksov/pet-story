@@ -1,0 +1,17 @@
+{% macro checkbox(params) %}
+    <label class="checkbox {{ params.class }}">
+        <input
+            type="checkbox"
+            class="checkbox__input"
+            name="{{ params.name }}"
+            {% if params.checked %}checked{% endif %}
+            {% if params.required %}required{% endif %}
+        >
+
+        <span class="checkbox__custom-input"></span>
+
+        <span class="checkbox__text">
+            {{ params.text }}
+        </span>
+    </label>
+{% endmacro %}

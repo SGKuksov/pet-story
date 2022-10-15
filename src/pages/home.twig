@@ -1,0 +1,19 @@
+{% extends '../assets/layout/base.twig' %}
+
+
+{% block body %}
+    {% set title = 'Главная - home' %}
+    {% set meta_d = 'Описание' %}
+    {% set theme_color = '#FFFFFF' %}
+
+    <h1>Привет, я новый сайт, сверстай меня скорей =)</h1>
+{% endblock %}
+
+
+{% block modal %}
+    {% include '../components/modal/modal-location.twig' %}
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}

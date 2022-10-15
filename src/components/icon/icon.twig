@@ -1,0 +1,9 @@
+{% macro icon(params) %}
+    <svg
+        width="{{ params.w | default(20) }}"
+        height="{{ params.h | default(20) }}"
+        class="icon {{ params.class }}"
+    >
+        <use xlink:href="#{{ params.name }}"></use>
+    </svg>
+{% endmacro %}
